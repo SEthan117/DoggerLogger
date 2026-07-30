@@ -13,6 +13,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     },
 })
 
+//Login functions
 export async function signUp(email: string, password: string) {
     const {data, error} = await supabase.auth.signUp({
         email,
@@ -35,3 +36,5 @@ export async function signOut() {
     const {error} = await supabase.auth.signOut();
     if(error) throw error;
 }
+
+//Other Database functions

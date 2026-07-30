@@ -13,6 +13,7 @@ export default function App() {
         const { data, error } = await supabase
           .from('breeds') 
           .select('*')
+          .order('id')
           .limit(10);
 
         if (error) throw error;
