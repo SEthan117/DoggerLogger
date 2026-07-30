@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, StyleSheet, Text, View } from 'react-native';
-import { supabase } from '../lib/supabase'; // Adjust path based on where your lib folder is
+import { supabase } from '../../lib/supabase'; // Adjust path based on where your lib folder is
 
 export default function App() {
   const [items, setItems] = useState<any[]>([]);
