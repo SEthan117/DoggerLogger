@@ -6,13 +6,7 @@ export default function login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const router = useRouter();
-
-    //For testing button
-    const [text, setText] = useState('');
-
-    const pressBtn = () => {
-        setText(`${username}, ${password}`)
-    }
+    const isLoginInvalid = username.trim() === '' || password.trim() === ''
 
     return(
         <View>
@@ -29,9 +23,9 @@ export default function login() {
 
             <Button 
                 title="Sign In" 
-                onPress={pressBtn} />
+                onPress={() => router.replace('/')} 
+                disabled={isLoginInvalid} />
 
-            <Text>{text}</Text>
             <Text>No Account?{"\n"}</Text>
             <Button 
                 title="Create Account"
